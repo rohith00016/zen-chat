@@ -23,10 +23,10 @@ const Conversation = ({ conversation }) => {
             </div>
           </div>
         ) : (
-          <div className="avatar online placeholder">
-            <div className="bg-neutral text-neutral-content rounded-full w-16">
+          <div className={`avatar placeholder ${isOnline && "online"}`}>
+            <div className="bg-neutral text-neutral-content rounded-full w-12">
               <span className="text-xl">
-                {fullName.charAt(0).toUpperCase()}
+                {conversation.fullName.charAt(0).toUpperCase()}
               </span>
             </div>
           </div>
