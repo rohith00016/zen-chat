@@ -9,7 +9,6 @@ const Sidebar = () => {
       <div>
         <SearchInput />
         <div className="divider m-0 p-0"></div>
-
         <Conversations />
       </div>
       <div className="flex justify-between items-center">
