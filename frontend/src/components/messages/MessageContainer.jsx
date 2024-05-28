@@ -60,11 +60,24 @@ const MessageContainer = () => {
         <>
           {" "}
           <div className="flex items-center bg-[#F6F6F9] p-2 border border-slate-300 px-3">
-            <div className={`avatar ${isOnline && "online"}`}>
-              <div className="w-12 rounded-full">
-                <img src={selectedConversation.profilePic} alt="user avatar" />
+            {selectedConversation.profilePic ? (
+              <div className={`avatar ${isOnline && "online"}`}>
+                <div className="w-12 rounded-full">
+                  <img
+                    src={selectedConversation.profilePic}
+                    alt="user avatar"
+                  />
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className={`avatar placeholder ${isOnline && "online"}`}>
+                <div className="bg-neutral text-neutral-content rounded-full w-12">
+                  <span className="text-xl">
+                    {selectedConversation.fullName.charAt(0).toUpperCase()}
+                  </span>
+                </div>
+              </div>
+            )}
             <span className="text-gray-900 font-bold mx-2">
               {selectedConversation?.fullName}
             </span>
