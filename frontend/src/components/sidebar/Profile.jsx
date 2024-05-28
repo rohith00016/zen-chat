@@ -62,11 +62,21 @@ const Profile = () => {
               className="flex gap-2 hover:text-white rounded p-2 cursor-pointer"
               onClick={handleImageClick}
             >
-              <div className="avatar">
-                <div className="w-[80px] rounded-full ring-[2px] ring-[#16A34A]">
-                  <img src={profilePic} alt="user avatar" />
+              {profilePic !== "" ? (
+                <div className="avatar">
+                  <div className="w-[80px] rounded-full ring-[2px] ring-[#16A34A]">
+                    <img src={profilePic} alt="user avatar" />
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <div className="avatar online placeholder">
+                  <div className="bg-neutral text-neutral-content rounded-full w-16">
+                    <span className="text-xl">
+                      {fullName.charAt(0).toUpperCase()}
+                    </span>
+                  </div>
+                </div>
+              )}
               <input
                 type="file"
                 accept="image/*"
@@ -75,6 +85,7 @@ const Profile = () => {
                 style={{ display: "none" }}
               />
             </div>
+
             <div className="flex flex-col flex-1 ml-[10px]">
               <div className="flex justify-between">
                 {isEditing ? (

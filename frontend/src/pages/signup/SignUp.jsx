@@ -96,7 +96,7 @@ const SignUp = () => {
                     ></path>
                   </svg>
                   <span class="font-medium text-gray-600">
-                    Drop files to Attach, or
+                    Drop file for Profile or
                     <span class="text-blue-600 underline ml-[4px]">browse</span>
                   </span>
                 </span>
@@ -106,7 +106,7 @@ const SignUp = () => {
                   class="hidden"
                   accept="image/png,image/jpeg"
                   id="input"
-                  onClick={handleFileChange}
+                  onChange={handleFileChange}
                 />
               </label>
             </div>

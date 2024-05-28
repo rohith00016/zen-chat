@@ -48,8 +48,8 @@ const useSignup = () => {
 
 export default useSignup;
 
-function handleInputErrors({ fullName, username, password, profilePic }) {
-  if (!fullName || !username || !password || !profilePic) {
+function handleInputErrors({ fullName, username, password }) {
+  if (!fullName || !username || !password ) {
     toast.error("Please fill in all fields");
     return false;
   }
