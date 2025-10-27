@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import axios from "axios";
+import api from "../utils/api";
 import toast from "react-hot-toast";
 import useConversation from "../zustand/useConversation";
 
@@ -9,7 +8,7 @@ const useDeleteMessage = () => {
   const deleteMessage = async (messageId) => {
     try {
       setMessages(messages.filter((msg) => msg._id !== messageId));
-      await axios.delete(`/api/messages/delete/${messageId}`);
+      await api.delete(`/messages/delete/${messageId}`);
     } catch (error) {
       toast.error(error.message);
     }

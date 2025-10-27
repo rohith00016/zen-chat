@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import axios from "axios"; // Import Axios
+import api from "../utils/api";
 import { useAuthContext } from "../context/AuthContext";
 
 const useSignup = () => {
@@ -24,7 +24,7 @@ const useSignup = () => {
       formData.append("password", password);
       formData.append("profilePic", profilePic);
 
-      const res = await axios.post("/api/auth/signup", formData, {
+      const res = await api.post("/auth/signup", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -49,7 +49,7 @@ const useSignup = () => {
 export default useSignup;
 
 function handleInputErrors({ fullName, username, password }) {
-  if (!fullName || !username || !password ) {
+  if (!fullName || !username || !password) {
     toast.error("Please fill in all fields");
     return false;
   }

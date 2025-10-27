@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../utils/api";
 import toast from "react-hot-toast";
 import useConversation from "../zustand/useConversation";
 
@@ -7,7 +7,7 @@ const useUpdateMessage = () => {
 
   const updateMessage = async (messageId, newContent) => {
     try {
-      const response = await axios.put(`/api/messages/update/${messageId}`, {
+      const response = await api.put(`/messages/update/${messageId}`, {
         message: newContent,
       });
       setMessages(

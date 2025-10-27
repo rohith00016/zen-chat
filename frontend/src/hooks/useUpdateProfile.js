@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import api from "../utils/api";
 import toast from "react-hot-toast";
 import { useAuthContext } from "../context/AuthContext";
 
@@ -16,7 +16,7 @@ const useUpdateProfile = () => {
         formData.append(key, updatedProfile[key]);
       }
 
-      const response = await axios.put(`/api/users/update`, formData, {
+      const response = await api.put(`/users/update`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -27,7 +27,6 @@ const useUpdateProfile = () => {
       toast.success("Profile updated successfully");
     } catch (error) {
       toast.error("Failed to update profile");
-      console.error("Error updating profile:", error.message);
     } finally {
       setIsLoading(false);
     }
