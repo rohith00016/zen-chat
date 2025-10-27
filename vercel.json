@@ -16,12 +16,6 @@
   "env": {
     "NODE_ENV": "production"
   },
-  "functions": {
-    "backend/server.js": {
-      "maxDuration": 30
-    }
-  },
   "regions": ["iad1"],
-  "framework": null,
-  "outputDirectory": "backend"
+  "framework": null
 }
