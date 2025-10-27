@@ -178,6 +178,55 @@ npm start
 
 The application will be available at the configured PORT (default: 5000).
 
+## 🌐 Deployment
+
+### Frontend (Netlify)
+
+1. **Connect your repository** to Netlify
+2. **Set build settings**:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+   - Node version: `18`
+3. **Set environment variables** in Netlify dashboard:
+   ```
+   VITE_API_URL=https://your-backend-url.vercel.app
+   VITE_SOCKET_URL=https://your-backend-url.vercel.app
+   ```
+4. **Deploy**: Netlify will automatically build and deploy your frontend
+
+### Backend (Vercel)
+
+1. **Install Vercel CLI**:
+   ```bash
+   npm i -g vercel
+   ```
+2. **Login to Vercel**:
+   ```bash
+   vercel login
+   ```
+3. **Deploy from project root**:
+   ```bash
+   vercel
+   ```
+4. **Set environment variables** in Vercel dashboard:
+   ```
+   MONGODB_URI=your_mongodb_uri
+   JWT_SECRET=your_jwt_secret
+   CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+   CLOUDINARY_API_KEY=your_cloudinary_api_key
+   CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+   ```
+5. **Redeploy** after setting environment variables:
+   ```bash
+   vercel --prod
+   ```
+
+### Deployment Files
+
+- **`frontend/netlify.toml`**: Netlify configuration with build settings, redirects, and headers
+- **`vercel.json`**: Vercel configuration for backend deployment
+- **`backend/package.json`**: Backend package configuration for Vercel
+
 ## 🎯 Available Scripts
 
 ### Root Level

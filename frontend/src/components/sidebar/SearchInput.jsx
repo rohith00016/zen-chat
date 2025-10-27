@@ -82,7 +82,10 @@ const SearchInput = () => {
   }, [searchBox]);
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center justify-between gap-3 p-3">
+    <form
+      onSubmit={handleSubmit}
+      className="flex items-center justify-between gap-3 p-3"
+    >
       {searchBox ? (
         <input
           type="text"
